@@ -1,0 +1,89 @@
+$unused: rgba(160, 160, 170, 0.8);
+$used: rgba(16, 125, 156, 1);
+$white: rgba(250, 250, 250, 1);
+
+*{
+  box-sizing: border-box;
+}
+
+@keyframes flash {
+  0%  { background-color: $unused }
+  33% { background-color:  $used }
+  67% { background-color: $unused }
+  100% { background-color: $used }
+}
+body{
+  background: url('./images/crystal.jpg');
+  // &:after {
+  //   content: "";
+  //   background: url('./images/crystal.jpg');
+  //   opacity: 0.4;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   z-index: -1;
+  // }
+}
+.App{
+  padding: 20px;
+  background-color: rgba(240, 240, 240, 0.9);
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
+  margin: auto;
+  display: flex;
+  flex: 1;
+  margin-top: 4vh;
+  flex-direction: column;
+  justify-content: center;
+  .counters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 22px;
+    flex: 1;
+    .counter{
+      transition: all 0.1s ease;
+      padding: 10px 12px;
+      margin: 6px;
+      border-radius: 4px;
+      width: 45%;
+      max-width: 150px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      background-color: $unused;
+      &.selected{
+        background-color: rgba(16, 125, 156, 1);
+        color: $white;
+        animation: flash 0.4s 1;
+      }
+    }
+  }
+  .app-footer{
+    display: flex;
+    height: 64px;
+    justify-content: space-between;
+    margin-top: 20px;
+    button{
+      background: $used;
+      border: none;
+      width: 46%;
+      color: $white;
+      font-size: 25px;
+      padding: 14px 0;
+      box-shadow: 4px 4px 0px 0px $unused;
+      position: relative;
+      &:focus{
+        outline: none;
+      }
+      &:active{
+        box-shadow: none;
+        left: 4px;
+        top: 4px;
+      }
+    }
+  }
+}
