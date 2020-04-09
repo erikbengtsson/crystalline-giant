@@ -35,7 +35,7 @@ class Counters extends Component {
   }
 
   toggleCounter = (keyword) => {
-    console.log('här')
+
     let unusedKeywords = [...this.state.unusedKeywords]
     let activeKeywords = [...this.state.activeKeywords]
     if(unusedKeywords.includes(keyword)){
