@@ -68,7 +68,9 @@ class Counters extends Component {
         <footer className="app-footer">
           <button type="button" onClick={this.onRoll}>Roll</button>
           <button type="button" onClick={this.onReset}>Reset</button>
+
         </footer>
+        <p>Created by <a href="https://twitter.com/berikande">@berikande</a></p>
       </>
     )
   }
